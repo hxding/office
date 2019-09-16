@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Routing\Router;
+//use App\Aadmin\Controllers\CustomerControllser;
 
 Admin::routes();
 
@@ -11,5 +12,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('admin.home');
+
+    $router->resource('customer', CustomerController::class);
 
 });

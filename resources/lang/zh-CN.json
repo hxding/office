@@ -1,0 +1,14 @@
+{
+    "Id": "ID",
+    "Product id": "产品ID",
+    "Product user id": "产品用户ID",
+    "Credit level": "信用等级",
+    "Star level": "星级等级",
+    "Priority level": "属性",
+    "Customer type": "类型",
+    "Ip": "IP",
+    "Status": "状态",
+    "Status": "状态",
+    "Created at":"创建时间",
+    "Updated at":"更新时间"
+}
