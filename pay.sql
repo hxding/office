@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-09-16 17:36:54
+Date: 2019-09-17 14:15:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,19 +30,23 @@ CREATE TABLE `admin_menu` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_menu
 -- ----------------------------
 INSERT INTO `admin_menu` VALUES ('1', '0', '1', '首页', 'fa-bar-chart', '/', null, null, '2019-09-16 09:36:02');
 INSERT INTO `admin_menu` VALUES ('2', '0', '2', '权限管理', 'fa-tasks', null, null, null, '2019-09-16 09:34:51');
-INSERT INTO `admin_menu` VALUES ('3', '2', '3', '用户管理', 'fa-users', 'auth/users', null, null, '2019-09-16 09:35:03');
+INSERT INTO `admin_menu` VALUES ('3', '2', '3', '管理员管理', 'fa-users', 'auth/users', null, null, '2019-09-16 09:39:50');
 INSERT INTO `admin_menu` VALUES ('4', '2', '4', '角色管理', 'fa-user', 'auth/roles', null, null, '2019-09-16 09:35:14');
 INSERT INTO `admin_menu` VALUES ('5', '2', '5', '权限管理', 'fa-ban', 'auth/permissions', null, null, '2019-09-16 09:35:24');
 INSERT INTO `admin_menu` VALUES ('6', '2', '6', '菜单管理', 'fa-bars', 'auth/menu', null, null, '2019-09-16 09:35:41');
 INSERT INTO `admin_menu` VALUES ('7', '2', '7', '操作日志', 'fa-history', 'auth/logs', null, null, '2019-09-16 09:35:50');
 INSERT INTO `admin_menu` VALUES ('8', '0', '0', '客户管理', 'fa-bars', '/customer', null, '2019-09-16 09:06:16', '2019-09-16 09:06:16');
+INSERT INTO `admin_menu` VALUES ('9', '0', '0', '区域', 'fa-bars', '/provinces', null, '2019-09-17 05:49:03', '2019-09-17 05:49:03');
+INSERT INTO `admin_menu` VALUES ('10', '9', '0', '省份', 'fa-bars', '/provinces', null, '2019-09-17 05:49:34', '2019-09-17 05:49:34');
+INSERT INTO `admin_menu` VALUES ('11', '9', '0', '城市', 'fa-bars', '/cities', null, '2019-09-17 05:50:03', '2019-09-17 05:50:03');
+INSERT INTO `admin_menu` VALUES ('12', '9', '0', '县区', 'fa-bars', '/countries', null, '2019-09-17 05:51:12', '2019-09-17 05:51:12');
 
 -- ----------------------------
 -- Table structure for admin_operation_log
@@ -59,7 +63,7 @@ CREATE TABLE `admin_operation_log` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `admin_operation_log_user_id_index` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=159 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=229 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -222,6 +226,75 @@ INSERT INTO `admin_operation_log` VALUES ('155', '1', 'admin/auth/roles', 'GET',
 INSERT INTO `admin_operation_log` VALUES ('156', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 09:36:17', '2019-09-16 09:36:17');
 INSERT INTO `admin_operation_log` VALUES ('157', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 09:36:18', '2019-09-16 09:36:18');
 INSERT INTO `admin_operation_log` VALUES ('158', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 09:36:25', '2019-09-16 09:36:25');
+INSERT INTO `admin_operation_log` VALUES ('159', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-09-16 09:39:12', '2019-09-16 09:39:12');
+INSERT INTO `admin_operation_log` VALUES ('160', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 09:39:40', '2019-09-16 09:39:40');
+INSERT INTO `admin_operation_log` VALUES ('161', '1', 'admin/auth/menu/3/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 09:39:43', '2019-09-16 09:39:43');
+INSERT INTO `admin_operation_log` VALUES ('162', '1', 'admin/auth/menu/3', 'PUT', '127.0.0.1', '{\"parent_id\":\"2\",\"title\":\"\\u7ba1\\u7406\\u5458\\u7ba1\\u7406\",\"icon\":\"fa-users\",\"uri\":\"auth\\/users\",\"roles\":[null],\"permission\":null,\"_token\":\"Q5ZwSJc1pt5O8I0U260HiSaSCSua1zj7yiAGHZHn\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/office.pay.com\\/admin\\/auth\\/menu\"}', '2019-09-16 09:39:50', '2019-09-16 09:39:50');
+INSERT INTO `admin_operation_log` VALUES ('163', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-16 09:39:51', '2019-09-16 09:39:51');
+INSERT INTO `admin_operation_log` VALUES ('164', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-16 09:39:52', '2019-09-16 09:39:52');
+INSERT INTO `admin_operation_log` VALUES ('165', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 09:39:58', '2019-09-16 09:39:58');
+INSERT INTO `admin_operation_log` VALUES ('166', '1', 'admin/customer', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 09:40:07', '2019-09-16 09:40:07');
+INSERT INTO `admin_operation_log` VALUES ('167', '1', 'admin/customer', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"_export_\":\"page:1\"}', '2019-09-16 10:07:42', '2019-09-16 10:07:42');
+INSERT INTO `admin_operation_log` VALUES ('168', '1', 'admin/customer/1', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:10:04', '2019-09-16 10:10:04');
+INSERT INTO `admin_operation_log` VALUES ('169', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:10:10', '2019-09-16 10:10:10');
+INSERT INTO `admin_operation_log` VALUES ('170', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:10:13', '2019-09-16 10:10:13');
+INSERT INTO `admin_operation_log` VALUES ('171', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:15:07', '2019-09-16 10:15:07');
+INSERT INTO `admin_operation_log` VALUES ('172', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:15:10', '2019-09-16 10:15:10');
+INSERT INTO `admin_operation_log` VALUES ('173', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:15:12', '2019-09-16 10:15:12');
+INSERT INTO `admin_operation_log` VALUES ('174', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:18:14', '2019-09-16 10:18:14');
+INSERT INTO `admin_operation_log` VALUES ('175', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:18:16', '2019-09-16 10:18:16');
+INSERT INTO `admin_operation_log` VALUES ('176', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:18:16', '2019-09-16 10:18:16');
+INSERT INTO `admin_operation_log` VALUES ('177', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:18:17', '2019-09-16 10:18:17');
+INSERT INTO `admin_operation_log` VALUES ('178', '1', 'admin/customer', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-16 10:24:30', '2019-09-16 10:24:30');
+INSERT INTO `admin_operation_log` VALUES ('179', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-09-17 05:33:54', '2019-09-17 05:33:54');
+INSERT INTO `admin_operation_log` VALUES ('180', '1', 'admin/customer', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:34:00', '2019-09-17 05:34:00');
+INSERT INTO `admin_operation_log` VALUES ('181', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:34:04', '2019-09-17 05:34:04');
+INSERT INTO `admin_operation_log` VALUES ('182', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:34:06', '2019-09-17 05:34:06');
+INSERT INTO `admin_operation_log` VALUES ('183', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:34:07', '2019-09-17 05:34:07');
+INSERT INTO `admin_operation_log` VALUES ('186', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:34:36', '2019-09-17 05:34:36');
+INSERT INTO `admin_operation_log` VALUES ('185', '1', 'admin/_handle_action_', 'POST', '127.0.0.1', '{\"_key\":\"184\",\"_model\":\"Encore_Admin_Auth_Database_OperationLog\",\"_token\":\"U8RYTBOSufsWZz7zITHU4Lan3aQFdI5H8DeANeK2\",\"_action\":\"Encore_Admin_Grid_Actions_Delete\",\"_input\":\"true\"}', '2019-09-17 05:34:31', '2019-09-17 05:34:31');
+INSERT INTO `admin_operation_log` VALUES ('187', '1', 'admin/customer', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:34:46', '2019-09-17 05:34:46');
+INSERT INTO `admin_operation_log` VALUES ('188', '1', 'admin/citis', 'GET', '127.0.0.1', '[]', '2019-09-17 05:38:12', '2019-09-17 05:38:12');
+INSERT INTO `admin_operation_log` VALUES ('189', '1', 'admin/countries', 'GET', '127.0.0.1', '[]', '2019-09-17 05:44:56', '2019-09-17 05:44:56');
+INSERT INTO `admin_operation_log` VALUES ('190', '1', 'admin/countries/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:45:25', '2019-09-17 05:45:25');
+INSERT INTO `admin_operation_log` VALUES ('191', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:45:31', '2019-09-17 05:45:31');
+INSERT INTO `admin_operation_log` VALUES ('192', '1', 'admin/customer', 'GET', '127.0.0.1', '[]', '2019-09-17 05:46:17', '2019-09-17 05:46:17');
+INSERT INTO `admin_operation_log` VALUES ('193', '1', 'admin/customer', 'GET', '127.0.0.1', '[]', '2019-09-17 05:47:56', '2019-09-17 05:47:56');
+INSERT INTO `admin_operation_log` VALUES ('194', '1', 'admin/provinces', 'GET', '127.0.0.1', '[]', '2019-09-17 05:48:08', '2019-09-17 05:48:08');
+INSERT INTO `admin_operation_log` VALUES ('195', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:48:12', '2019-09-17 05:48:12');
+INSERT INTO `admin_operation_log` VALUES ('196', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:48:15', '2019-09-17 05:48:15');
+INSERT INTO `admin_operation_log` VALUES ('197', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u533a\\u57df\",\"icon\":\"fa-bars\",\"uri\":\"\\/provinces\",\"roles\":[null],\"permission\":null,\"_token\":\"U8RYTBOSufsWZz7zITHU4Lan3aQFdI5H8DeANeK2\"}', '2019-09-17 05:49:03', '2019-09-17 05:49:03');
+INSERT INTO `admin_operation_log` VALUES ('198', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-17 05:49:03', '2019-09-17 05:49:03');
+INSERT INTO `admin_operation_log` VALUES ('199', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:49:06', '2019-09-17 05:49:06');
+INSERT INTO `admin_operation_log` VALUES ('200', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-09-17 05:49:07', '2019-09-17 05:49:07');
+INSERT INTO `admin_operation_log` VALUES ('201', '1', 'admin/provinces', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:49:09', '2019-09-17 05:49:09');
+INSERT INTO `admin_operation_log` VALUES ('202', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:49:13', '2019-09-17 05:49:13');
+INSERT INTO `admin_operation_log` VALUES ('203', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"9\",\"title\":\"\\u7701\\u4efd\",\"icon\":\"fa-bars\",\"uri\":\"\\/provinces\",\"roles\":[null],\"permission\":null,\"_token\":\"U8RYTBOSufsWZz7zITHU4Lan3aQFdI5H8DeANeK2\"}', '2019-09-17 05:49:34', '2019-09-17 05:49:34');
+INSERT INTO `admin_operation_log` VALUES ('204', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-17 05:49:34', '2019-09-17 05:49:34');
+INSERT INTO `admin_operation_log` VALUES ('205', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"9\",\"title\":\"\\u57ce\\u5e02\",\"icon\":\"fa-bars\",\"uri\":\"\\/cities\",\"roles\":[null],\"permission\":null,\"_token\":\"U8RYTBOSufsWZz7zITHU4Lan3aQFdI5H8DeANeK2\"}', '2019-09-17 05:50:03', '2019-09-17 05:50:03');
+INSERT INTO `admin_operation_log` VALUES ('206', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-17 05:50:03', '2019-09-17 05:50:03');
+INSERT INTO `admin_operation_log` VALUES ('207', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"9\",\"title\":\"\\u53bf\\u533a\",\"icon\":\"fa-bars\",\"uri\":\"\\/countries\",\"roles\":[null],\"permission\":null,\"_token\":\"U8RYTBOSufsWZz7zITHU4Lan3aQFdI5H8DeANeK2\"}', '2019-09-17 05:51:12', '2019-09-17 05:51:12');
+INSERT INTO `admin_operation_log` VALUES ('208', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-17 05:51:12', '2019-09-17 05:51:12');
+INSERT INTO `admin_operation_log` VALUES ('209', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-17 05:51:15', '2019-09-17 05:51:15');
+INSERT INTO `admin_operation_log` VALUES ('210', '1', 'admin/provinces', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:51:24', '2019-09-17 05:51:24');
+INSERT INTO `admin_operation_log` VALUES ('211', '1', 'admin/cities', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:51:25', '2019-09-17 05:51:25');
+INSERT INTO `admin_operation_log` VALUES ('212', '1', 'admin/countries', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:51:26', '2019-09-17 05:51:26');
+INSERT INTO `admin_operation_log` VALUES ('213', '1', 'admin/provinces', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:51:27', '2019-09-17 05:51:27');
+INSERT INTO `admin_operation_log` VALUES ('214', '1', 'admin/customer', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 05:54:49', '2019-09-17 05:54:49');
+INSERT INTO `admin_operation_log` VALUES ('215', '1', 'admin/customer-banks', 'GET', '127.0.0.1', '[]', '2019-09-17 06:03:44', '2019-09-17 06:03:44');
+INSERT INTO `admin_operation_log` VALUES ('216', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:03:59', '2019-09-17 06:03:59');
+INSERT INTO `admin_operation_log` VALUES ('217', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:04:28', '2019-09-17 06:04:28');
+INSERT INTO `admin_operation_log` VALUES ('218', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:04:29', '2019-09-17 06:04:29');
+INSERT INTO `admin_operation_log` VALUES ('219', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:04:30', '2019-09-17 06:04:30');
+INSERT INTO `admin_operation_log` VALUES ('220', '1', 'admin/customer', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:04:34', '2019-09-17 06:04:34');
+INSERT INTO `admin_operation_log` VALUES ('221', '1', 'admin/provinces', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:04:36', '2019-09-17 06:04:36');
+INSERT INTO `admin_operation_log` VALUES ('222', '1', 'admin/cities', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:04:37', '2019-09-17 06:04:37');
+INSERT INTO `admin_operation_log` VALUES ('223', '1', 'admin/countries', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:04:37', '2019-09-17 06:04:37');
+INSERT INTO `admin_operation_log` VALUES ('224', '1', 'admin/provinces', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:04:38', '2019-09-17 06:04:38');
+INSERT INTO `admin_operation_log` VALUES ('225', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:04:40', '2019-09-17 06:04:40');
+INSERT INTO `admin_operation_log` VALUES ('226', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:04:41', '2019-09-17 06:04:41');
+INSERT INTO `admin_operation_log` VALUES ('227', '1', 'admin/customer', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:13:09', '2019-09-17 06:13:09');
+INSERT INTO `admin_operation_log` VALUES ('228', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-17 06:13:18', '2019-09-17 06:13:18');
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -4231,7 +4304,7 @@ CREATE TABLE `merchant_tokens` (
   `ip` varchar(100) NOT NULL,
   `token` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of merchant_tokens
@@ -4239,6 +4312,8 @@ CREATE TABLE `merchant_tokens` (
 INSERT INTO `merchant_tokens` VALUES ('1', 'A92', 'adminfromfunding', '1567748248', '1567748428', '127.0.0.1', '004aaa9f4c9aaa8f1923b18a2b348c3d5ed2f6b1');
 INSERT INTO `merchant_tokens` VALUES ('2', 'A92', 'adminfromfunding', '1567748699', '1567748879', '127.0.0.1', '5267be5433aecfdf1720c333096d928fa04703c3');
 INSERT INTO `merchant_tokens` VALUES ('3', 'A92', 'adminfromfunding', '1567748772', '1567748952', '127.0.0.1', 'c6bab18f29f4c190c6b68e09552b79180222965a');
+INSERT INTO `merchant_tokens` VALUES ('4', 'A92', 'adminfromfunding', '1568684522', '1568684702', '127.0.0.1', 'e4ee990df81982896760bc2ee18f800c134a6620');
+INSERT INTO `merchant_tokens` VALUES ('5', 'A92', 'adminfromfunding', '1568684525', '1568684705', '127.0.0.1', '517ee0d8a3da416cbea93a9dc5c0ca52bb390ba7');
 
 -- ----------------------------
 -- Table structure for migrations

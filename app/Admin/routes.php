@@ -14,5 +14,13 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('admin.home');
 
     $router->resource('customer', CustomerController::class);
+        
+    $router->resource('cities', CitieController::class);
+
+    $router->resource('countries', CountrieController::class);
+
+    $router->resource('provinces', ProvinceController::class);
+
+    $router->resource('customer-banks', CustomerBankController::class);
 
 });
