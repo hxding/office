@@ -23,4 +23,6 @@ Route::group([
 
     $router->resource('customer-banks', CustomerBankController::class);
 
+    $router->resource('chartjs', ChartjsController::class);
+
 });
